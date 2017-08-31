@@ -35,7 +35,7 @@ define Host/Configure
 	$(CleanupToolchain)
 	mkdir -p $(GCC_BUILD_DIR)
 	(cd $(GCC_BUILD_DIR) && rm -f config.cache; \
-		$(GCC_CONFIGURE) \
+		CXXFLAGS=-std=gnu++98 $(GCC_CONFIGURE) \
 	);
 endef
 
